@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <title>Fantasy Football Lineup Optimizer</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <div id="line_up">
+                    <h2>Fantasy Football Lineup </h2>
+                    <h3><span id="spanDate"></span></h3>
+                    <table class="pure-table-striped orderStats" style='width:100%;margin-bottom:5px;'>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Category</th>
+                                <th>Team</th>
+                                <th>Salary($K)</th>
+                                <th>Projected FF Points</th>
+                                <th>Pt/$/K</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lineUpBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/info.js"></script>
+            <script type="text/javascript">
+                var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                var today = new Date();
+                today.setTime(today.getTime());
+                document.getElementById("spanDate").innerHTML = months[today.getMonth()]+" "+today.getDate()+", "+today.getFullYear();
+            </script>
+            <script>
+                new Tablesort(document.getElementById('sort'));
+            </script>
+</body>
+</html>
